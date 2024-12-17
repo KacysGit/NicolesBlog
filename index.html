@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel & Party Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Parties</a></li>
+                <li><a href="travel.html">Travel</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to My Party Blog</h1>
+    </header>
+
+    <main class="content">
+        <!-- Placeholder for adding blog posts -->
+        <section id="posts">
+            <article class="blog-post">
+                <h2>Welcome</h2>
+                <p>Welcome to my mom's blog!</p>
+                <img src="images/Parties/dolly.jpg" alt="Sample Image">
+            </article>
+            <!-- Repeat article blocks for new posts -->
+        </section>
+
+        <section id="posts">
+            <article class="blog-post">
+                <h2>Thanksgiving 2024</h2>
+                <p>Happy Thanksgiving!</p>
+                <!-- Slideshow Section, add a slideshow that has navigational arrows to cycle through all the images -->
+                <section id="slideshow">
+                    <div class="slideshow-container">
+                        <!-- Images must be manually adjusted to be the same
+                             size in order to avoid funky transitions-->
+                        <div class="slide fade">
+                            <img src="images/Parties/thanksgiving2024.jpg" alt="slide 1">
+                        </div>
+                        <div class="slide fade">
+                            <img src="images/Parties/2thanksgiving2024.jpg" alt="slide 2">
+                        </div>
+                        <!-- The below are navigational arrows to walk through the slideshow -->
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                    </div>
+                </section>
+
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 by Nicole's Blog. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    
+    </script>
+</body>
+</html>
