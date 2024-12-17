@@ -20,6 +20,8 @@ header h1 {
     color: #d45a6f;
 }
 
+/* Navigation bar */
+/* Navigation bar */
 nav {
     background-color: #d45a6f;
     position: fixed;
@@ -27,32 +29,37 @@ nav {
     left: 0;
     width: 100%;
     z-index: 1000;
+    overflow-x: auto; /* Ensure scrolling works for smaller screens */
 }
 
 nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    list-style: none;
-    padding: 0;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    flex-wrap: nowrap; /* Ensure no wrapping */
 }
 
 nav ul li {
-    margin: 0 1.5rem;
+    margin: 0 0.5rem; /* Reduced spacing for better fit */
+    flex-shrink: 0; /* Prevent shrinking of list items */
 }
 
 nav ul li a {
-    display: sticky;
-    text-decoration: none;
-    color: #f4eeef;
-    font-size: 1.2rem;
-    font-weight: bold;
+    display: block;
     padding: 0.8rem;
-    padding-top: 0.8rem;;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem; /* Adjust font size for better fit */
+    text-align: center;
 }
 
-nav ul li:hover {
-    background-color: #da7f8ebe;
-    color:#ffdce2
+nav ul li a:hover {
+    background-color: #dc7788;
 }
 
 /* Main Content */
@@ -102,12 +109,15 @@ footer {
     color: #d45a6f;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
+    /* Remove this part or adjust to not force a column layout */
+    /* nav ul {
+        flex-direction: column; 
+    } */
     nav ul {
-        flex-direction: column;
+        flex-wrap: nowrap; /* Keep items in a row on small screens */
     }
-
+    
     #posts {
         grid-template-columns: 1fr;
     }
