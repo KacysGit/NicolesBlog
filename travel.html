@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel & Party Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Parties</a></li>
+                <li><a href="travel.html">Travel</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to My Travel Blog</h1>
+    </header>
+
+    <main class="content">
+        <!-- Placeholder for adding blog posts -->
+        <section id="posts">
+            <article class="blog-post">
+                <h2>The Ozarks</h2>
+                <p>Beautiful church nestled in the Ozarks ♥️</p>
+                <img src="images/Travel/Ozarks.jpg" alt="Outside View of Church in the Ozarks"> 
+                <img src="images/Travel/2Ozarks.jpg" alt="Inside View of Church in the Ozarks">
+                <!-- the above alt text appears in instances when the image does not load properly 
+                 or for those with visual impairments who use text readers-->
+            </article>
+        </section>
+        
+        <section id="posts">
+            <article class="blog-post">
+                <h2>Sedona</h2>
+                <p>Sedona is so beautiful 😍</p>
+                <img src="images/Travel/2Sedona.jpg" alt="Sedona, Arizona">
+            </article>
+            <!-- Repeat article blocks for new posts -->
+            <article class="blog-post">
+                <h2>Sedona</h2>
+                <p>#arizona #arizona_landscapes #arizonalife #travelpics #travelarizona #arizonaliving</p>
+                <img src="images/Travel/2Sedona.jpg" alt="Sedona, Arizona">
+            </article>
+        </section>
+        <section id="posts">
+            <article class="blog-post">
+                <h2>Montezuma's Castle</h2>
+                <p>It's so cool that Native Americans used to live here</p>
+                <img src="images/Travel/Montezumas Castle.jpg" alt="Image of Montezuma's Castle"> 
+            </article>
+        </section>
+
+        <section id="posts">
+            <article class="blog-post">
+                <h2>How to do a Slideshow</h2>
+                <p>This way you can fit as many pictures as you would like on one post!</p>
+                <!-- Slideshow Section, add a slideshow that has navigational arrows to cycle through all the images -->
+                <section id="slideshow">
+                    <div class="slideshow-container">
+                        <!-- 410x550 px image size -->
+                        <div class="slide fade">
+                            <img src="images/Travel/Ozarks.jpg" alt="slide 1">
+                        </div>
+                        <div class="slide fade">
+                            <img src="images/Travel/2Ozarks.jpg" alt="slide 2">
+                        </div>
+
+                        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+                    </div>
+                </section>
+
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 by Nicole's Blog. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+    
+    </script>
+</body>
+</html>

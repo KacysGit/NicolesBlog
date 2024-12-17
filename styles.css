@@ -1,0 +1,187 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fef6f9;
+    color: #333;
+}
+
+/* Header */
+header {
+    margin-top: 5%;
+    text-align: center;
+    background-color: #ffdce2;
+    padding: 2rem 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #d45a6f;
+}
+
+nav {
+    background-color: #d45a6f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    display: sticky;
+    text-decoration: none;
+    color: #f4eeef;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.8rem;
+    padding-top: 0.8rem;;
+}
+
+nav ul li:hover {
+    background-color: #da7f8ebe;
+    color:#ffdce2
+}
+
+/* Main Content */
+.content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+#posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 5%;
+}
+
+.blog-post {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.blog-post img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.blog-post h2 {
+    font-size: 1.8rem;
+    color: #d45a6f;
+}
+
+.blog-post p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #ffdce2;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    color: #d45a6f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    #posts {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Slideshow Styles */
+#slideshow {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 70%;
+    margin: auto;
+    border: 13px solid #d45a6f; /* Added border */
+    padding: 1rem; /* Optional for spacing inside the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjust height as needed for centering */
+}
+
+/* Slide */
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev {
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.522);
+    margin-left: 3%;
+}
+
+.next {
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.522);
+    margin-right: 3%;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Fade effect for slides */
+.fade {
+    animation: fadeEffect 1.5s ease;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; } 
+    to { opacity: 1; }
+}
+
